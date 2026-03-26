@@ -1,0 +1,17 @@
+/dts-v1/;
+/plugin/;
+/ {
+    compatible = "allwinner,sun8i-h3";
+    fragment@0 {
+        target = <&spi0>;
+        __overlay__ {
+            status = "okay";
+            spidev@0 {
+                compatible = "rohm,dh2228fv";
+                reg = <0>;
+                spi-max-frequency = <125000000>;
+                status = "okay";
+            };
+        };
+    };
+};
